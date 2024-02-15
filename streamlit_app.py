@@ -1,7 +1,6 @@
-import altair as alt
-import numpy as np
-import pandas as pd
 import streamlit as st
+import plotly.express as px
+import numpy as np
 
 """
 # Welcome to Streamlit!
@@ -15,10 +14,9 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
 num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
-year_ = st.slider("Year", 1980, 2010, 20)
+year_ = st.slider("Year", 2007, 2010, 1980)
 
-import plotly.express as px
-import numpy as np
+
 
 df = px.data.gapminder().query("year == year_")
 fig = px.treemap(df, path=[px.Constant("world"), 'continent', 'country'], values='pop',
